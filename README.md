@@ -12,7 +12,7 @@ of brightness of onboard LED D6 each second.
 
 Used peripherals:
 - on-chip oscillator 8MHz 
-- TMR2 - 1ms interval, PR2=62, clock source for PWM (OCMP1)
+- TMR2 - 1ms interval, PR2=8000 (divides 8MHz), clock source for PWM (OCMP1)
 - OCMP1 - PWM output to on-board LED D6
 
 
