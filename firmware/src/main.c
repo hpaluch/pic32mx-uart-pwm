@@ -57,6 +57,8 @@ void TIMER2_EventHandler(uint32_t status, uintptr_t context)
 
 int main ( void )
 {
+    char c = ' ';
+    int c_send = 0;
     /* Initialize all modules */
     SYS_Initialize ( NULL );
 
@@ -72,6 +74,19 @@ int main ( void )
     
     while ( true )
     {
+        if (counter2 == 1000 && !c_send){
+            if (!UART2_WriteIsBusy()){
+                UART2_Write(&c,1);
+                c++;
+                if (c>=127){
+                    c=' ';
+                }
+                c_send = 1;
+            }
+        }
+        if (counter2 != 1000){
+            c_send = 0;
+        }
         /* Maintain state machines of all polled MPLAB Harmony modules. */
         SYS_Tasks ( );
     }
