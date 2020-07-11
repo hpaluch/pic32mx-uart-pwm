@@ -7,7 +7,8 @@ It *will* allow controlling LED brightness via commands
 on RS232/UART port.
 
 WARNING! Work in progress. Currently it flip-flops two levels
-of brightness of onboard LED D6 each second.
+of brightness of onboard LED D6 each second and send ASCII
+character to UART2 PIN21 TXD, 9600 bauds.
 
 
 Used peripherals:
@@ -47,6 +48,11 @@ More information on PWM is available on [PIC32 Output Compare data sheet - PDF][
 * [PIC32MX250F128B SPDIP][PIC32MX250F128B] inserted into socket U5
   (included with board, should be default)
 * programming pins switch S1 in position `A`
+* any USB-to-TTL serial adapter for example:
+  - [with CH341 chip][CH341]
+  - [USB Console Cable #954][cable954] (originally for Raspberry PI), but
+    beware of troubles with old or cloned chips (recent Win 10 driver
+    refuses to use such devices)
 
 ## Software requirements
 
@@ -62,3 +68,5 @@ More information on PWM is available on [PIC32 Output Compare data sheet - PDF][
 [MPLAB X IDE]: https://www.microchip.com/mplab/mplab-x-ide
 [PIC32MX250F128B]: https://www.microchip.com/wwwproducts/en/PIC32MX250F128B
 [PIC Microstick II]: https://www.microchip.com/DevelopmentTools/ProductDetails/dm330013-2
+[CH341]: https://github.com/hpaluch/hpaluch.github.io/wiki/Getting-started-with-LC-CH341A-USB-conversion-module
+[cable954]: https://www.modmypi.com/raspberry-pi/communication-1068/serial-1075/usb-to-ttl-serial-cable-debug--console-cable-for-raspberry-pi
