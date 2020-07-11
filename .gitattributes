@@ -5,10 +5,11 @@
 Makefile text eol=lf
 *.mk text eol=lf
 *.bash text eol=lf
-*.c text eol=lf
-*.h text eol=lf
+*.c text eol=crlf
+*.h text eol=crlf
 # new harmony is weird
-#firmware/src/config/default/initialization.c text eol=crlf
+#firmware/src/config/default/*.c text eol=lf
+#firmware/src/config/default/definitions.h text eol=lf
 #firmware/src/config/default/peripheral/clk/plib_clk.c text eol=crlf
 #firmware/src/config/default/peripheral/ocmp/plib_ocmp1.c text eol=crlf
 #firmware/src/config/default/toolchain_specifics.h text eol=crlf

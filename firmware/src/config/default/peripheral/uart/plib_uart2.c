@@ -335,13 +335,13 @@ static void UART2_RX_InterruptHandler (void)
 {
     if(uart2Obj.rxBusyStatus == true)
     {
+        /* Clear UART2 RX Interrupt flag */
+        IFS1CLR = _IFS1_U2RXIF_MASK;
+
         while((_U2STA_URXDA_MASK == (U2STA & _U2STA_URXDA_MASK)) && (uart2Obj.rxSize > uart2Obj.rxProcessedSize) )
         {
             uart2Obj.rxBuffer[uart2Obj.rxProcessedSize++] = (uint8_t )(U2RXREG);
         }
-
-        /* Clear UART2 RX Interrupt flag after reading data buffer */
-        IFS1CLR = _IFS1_U2RXIF_MASK;
 
         /* Check if the buffer is done */
         if(uart2Obj.rxProcessedSize >= uart2Obj.rxSize)
@@ -368,13 +368,13 @@ static void UART2_TX_InterruptHandler (void)
 {
     if(uart2Obj.txBusyStatus == true)
     {
+        /* Clear UART2TX Interrupt flag */
+        IFS1CLR = _IFS1_U2TXIF_MASK;
+
         while((!(U2STA & _U2STA_UTXBF_MASK)) && (uart2Obj.txSize > uart2Obj.txProcessedSize) )
         {
             U2TXREG = uart2Obj.txBuffer[uart2Obj.txProcessedSize++];
         }
-
-        /* Clear UART2TX Interrupt flag after writing to buffer */
-        IFS1CLR = _IFS1_U2TXIF_MASK;
 
         /* Check if the buffer is done */
         if(uart2Obj.txProcessedSize >= uart2Obj.txSize)
