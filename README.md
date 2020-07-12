@@ -7,9 +7,18 @@ It *will* allow controlling LED brightness via commands
 on RS232/UART port.
 
 WARNING! Work in progress. Currently it flip-flops two levels
-of brightness of onboard LED D6 each second and send ASCII
-character to UART2 PIN21 TXD, 9600 bauds.
+of brightness of onboard LED D6 each second and send
+example output to  `UART2 PIN21 TXD` at 9600 bauds.
 
+Example output on UART2:
+
+```
+Starting... Build time: Sun Jul 12 16:35:33 2020
+OC1RS=8000 c=
+OC1RS=2000 c=!
+OC1RS=8000 c="
+...
+```
 
 Used peripherals:
 - on-chip oscillator 8MHz 
