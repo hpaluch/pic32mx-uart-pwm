@@ -24,12 +24,12 @@
 
 #include <string.h>                     // strlen(3)
 #include <stdlib.h>                     // Defines EXIT_FAILURE
+#include <inttypes.h>
 #include "definitions.h"                // SYS function prototypes
 
 
 
-static const char *MSG_INIT="Init...\r\n";
-
+static volatile uint16_t seconds = 0;
 static volatile uint16_t counter2 = 0;
 
 //TMR2 for PWM, called each 1ms
@@ -38,9 +38,11 @@ void TIMER2_EventHandler(uint32_t status, uintptr_t context)
     counter2++;
     // each second change brightness of LED
     if (counter2 == 1000){
+        seconds ++;
         OC1RS = 8000;
     }
     if (counter2 == 2000){
+        seconds ++;
         OC1RS = 2000;
         counter2 = 0;
     }
@@ -54,8 +56,8 @@ void TIMER2_EventHandler(uint32_t status, uintptr_t context)
 
 int main ( void )
 {
+    int old_seconds = 0;
     char c = ' ';
-    int c_send = 0;
     /* Initialize all modules */
     SYS_Initialize ( NULL );
     
@@ -64,20 +66,17 @@ int main ( void )
     TMR2_CallbackRegister(TIMER2_EventHandler,(uintptr_t)NULL);     
     TMR2_Start();
 
-    puts(MSG_INIT);
+    printf("Starting... Build time: %s\r\n", __TIMESTAMP__);
     
     while ( true )
     {
-        if (counter2 == 1000 && !c_send){
-            putchar(c);
+        if (old_seconds != seconds){
+            old_seconds = seconds;
+            printf("OC1RS=%" PRIu16  " c=%c\r\n",OC1RS,c);
             c++;
             if (c>=127){
                 c=' ';
             }
-            c_send = 1;
-        }
-        if (counter2 != 1000){
-            c_send = 0;
         }
         /* Maintain state machines of all polled MPLAB Harmony modules. */
         SYS_Tasks ( );
