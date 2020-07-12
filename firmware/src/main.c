@@ -23,15 +23,12 @@
 // *****************************************************************************
 
 #include <string.h>                     // strlen(3)
-#include <stddef.h>                     // Defines NULL
-#include <stdbool.h>                    // Defines true
 #include <stdlib.h>                     // Defines EXIT_FAILURE
 #include "definitions.h"                // SYS function prototypes
 
 
 
-//static const char *MSG_INIT="Init...\r\n";
-static const char *MSG_LOOP="Entering main loop...\r\n";
+static const char *MSG_INIT="Init...\r\n";
 
 static volatile uint16_t counter2 = 0;
 
@@ -61,28 +58,23 @@ int main ( void )
     int c_send = 0;
     /* Initialize all modules */
     SYS_Initialize ( NULL );
-
-    // commented - must wait after write
-    //UART2_Write(MSG_INIT,strlen(MSG_INIT));
     
     OCMP1_Enable();
     
     TMR2_CallbackRegister(TIMER2_EventHandler,(uintptr_t)NULL);     
     TMR2_Start();
 
-    UART2_Write((void*)MSG_LOOP,strlen(MSG_LOOP));
+    puts(MSG_INIT);
     
     while ( true )
     {
         if (counter2 == 1000 && !c_send){
-            if (!UART2_WriteIsBusy()){
-                UART2_Write(&c,1);
-                c++;
-                if (c>=127){
-                    c=' ';
-                }
-                c_send = 1;
+            putchar(c);
+            c++;
+            if (c>=127){
+                c=' ';
             }
+            c_send = 1;
         }
         if (counter2 != 1000){
             c_send = 0;

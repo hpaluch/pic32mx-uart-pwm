@@ -48,6 +48,7 @@
 #include <stdint.h>
 #include <stddef.h>
 #include <stdbool.h>
+#include <stdio.h>
 #include "peripheral/uart/plib_uart2.h"
 #include "peripheral/tmr/plib_tmr2.h"
 #include "peripheral/clk/plib_clk.h"

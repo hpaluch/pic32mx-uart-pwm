@@ -435,17 +435,17 @@
         </String>
         <Boolean dnOrder="86" id="EVIC_37_ENABLE">
           <Values dnOrder="0">
-            <Dynamic dnOrder="0" id="core" value="true"/>
+            <Dynamic dnOrder="0" id="core" value="false"/>
           </Values>
         </Boolean>
         <Boolean dnOrder="87" id="EVIC_37_HANDLER_LOCK">
           <Values dnOrder="0">
-            <Dynamic dnOrder="0" id="core" value="true"/>
+            <Dynamic dnOrder="0" id="core" value="false"/>
           </Values>
         </Boolean>
         <String dnOrder="88" id="EVIC_37_INTERRUPT_HANDLER">
           <Values dnOrder="0">
-            <Dynamic dnOrder="0" id="core" value="UART_2_InterruptHandler"/>
+            <Dynamic dnOrder="0" id="core" value="UART_2_Handler"/>
           </Values>
         </String>
         <Boolean dnOrder="89" id="EVIC_8_ENABLE">
@@ -720,22 +720,22 @@
         </Boolean>
         <Boolean dnOrder="137" id="UART_2_INTERRUPT_ENABLE">
           <Values dnOrder="0">
-            <Dynamic dnOrder="0" id="uart2" value="true"/>
+            <Dynamic dnOrder="0" id="uart2" value="false"/>
           </Values>
         </Boolean>
         <Boolean dnOrder="138" id="UART_2_INTERRUPT_ENABLE_UPDATE">
           <Values dnOrder="0">
-            <Dynamic dnOrder="0" id="core" value="false"/>
+            <Dynamic dnOrder="0" id="core" value="true"/>
           </Values>
         </Boolean>
         <String dnOrder="139" id="UART_2_INTERRUPT_HANDLER">
           <Values dnOrder="0">
-            <Dynamic dnOrder="0" id="uart2" value="UART_2_InterruptHandler"/>
+            <Dynamic dnOrder="0" id="uart2" value="UART_2_Handler"/>
           </Values>
         </String>
         <Boolean dnOrder="140" id="UART_2_INTERRUPT_HANDLER_LOCK">
           <Values dnOrder="0">
-            <Dynamic dnOrder="0" id="uart2" value="true"/>
+            <Dynamic dnOrder="0" id="uart2" value="false"/>
           </Values>
         </Boolean>
         <Integer dnOrder="141" id="USB_CLOCK_FREQUENCY">
@@ -787,7 +787,28 @@
         </Hex>
       </Symbols>
     </UniqueComponent>
-    <UniqueComponent dnOrder="3" id="tmr2">
+    <UniqueComponent dnOrder="3" id="stdio">
+      <Symbols dnOrder="0">
+        <String dnOrder="0" id="DEBUG_PERIPHERAL">
+          <Values dnOrder="0">
+            <Dynamic dnOrder="0" id="stdio" value="uart2"/>
+          </Values>
+        </String>
+      </Symbols>
+      <Attachments dnOrder="1">
+        <DirectDependency dnOrder="0" id="UART">
+          <Attributes dnOrder="0">
+            <String dnOrder="0" id="targetComponentID">
+              <Value dnOrder="0">uart2</Value>
+            </String>
+            <String dnOrder="1" id="targetAttachmentID">
+              <Value dnOrder="0">UART2_UART</Value>
+            </String>
+          </Attributes>
+        </DirectDependency>
+      </Attachments>
+    </UniqueComponent>
+    <UniqueComponent dnOrder="4" id="tmr2">
       <Symbols dnOrder="0">
         <Integer dnOrder="0" id="TIMER_CLOCK_FREQ">
           <Values dnOrder="0">
@@ -816,7 +837,7 @@
         </Boolean>
       </Symbols>
     </UniqueComponent>
-    <UniqueComponent dnOrder="4" id="uart2">
+    <UniqueComponent dnOrder="5" id="uart2">
       <Symbols dnOrder="0">
         <Integer dnOrder="0" id="BAUD_RATE">
           <Values dnOrder="0">
@@ -838,24 +859,49 @@
             <Dynamic dnOrder="0" id="uart2" value="8000000"/>
           </Values>
         </Integer>
-        <Hex dnOrder="4" id="UMODE_VALUE">
+        <Boolean dnOrder="4" id="UART_RING_BUFFER_ENABLE">
+          <Attributes dnOrder="0">
+            <Boolean dnOrder="0" id="visible">
+              <Value dnOrder="0">false</Value>
+            </Boolean>
+          </Attributes>
+        </Boolean>
+        <Hex dnOrder="5" id="UMODE_VALUE">
           <Values dnOrder="0">
             <Dynamic dnOrder="0" id="uart2" value="0"/>
           </Values>
         </Hex>
+        <Boolean dnOrder="6" id="USART_INTERRUPT_MODE">
+          <Values dnOrder="0">
+            <Dynamic dnOrder="0" id="stdio" value="false"/>
+          </Values>
+        </Boolean>
       </Symbols>
+      <Attachments dnOrder="1">
+        <DirectCapability dnOrder="0" id="UART2_UART">
+          <Attributes dnOrder="0">
+            <String dnOrder="0" id="targetComponentID">
+              <Value dnOrder="0">stdio</Value>
+            </String>
+            <String dnOrder="1" id="targetAttachmentID">
+              <Value dnOrder="0">UART</Value>
+            </String>
+          </Attributes>
+        </DirectCapability>
+      </Attachments>
     </UniqueComponent>
   </Components>
   <UserData>
-    <ComponentGraph dnOrder="0" id="__ROOTVIEW">
+    <GraphSettings canvasHeight="400" canvasWidth="400" dnOrder="0"/>
+    <ComponentGraph dnOrder="1" id="__ROOTVIEW">
       <ElementPositions dnOrder="0">
         <ElementPosition dnOrder="0" id="core" x="240" y="20"/>
         <ElementPosition dnOrder="1" id="dfp" x="20" y="20"/>
         <ElementPosition dnOrder="2" id="ocmp1" x="190" y="60"/>
-        <ElementPosition dnOrder="3" id="tmr2" x="30" y="60"/>
-        <ElementPosition dnOrder="4" id="uart2" x="340" y="18"/>
+        <ElementPosition dnOrder="3" id="stdio" x="361" y="125"/>
+        <ElementPosition dnOrder="4" id="tmr2" x="30" y="60"/>
+        <ElementPosition dnOrder="5" id="uart2" x="185" y="111"/>
       </ElementPositions>
     </ComponentGraph>
-    <GraphSettings canvasHeight="400" canvasWidth="400" dnOrder="1"/>
   </UserData>
 </Configuration>

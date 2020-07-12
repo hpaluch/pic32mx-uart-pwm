@@ -27,8 +27,8 @@
           <Name dnOrder="1">interrupts.c</Name>
           <LogicalPath dnOrder="2">config/default/</LogicalPath>
           <PhysicalPath dnOrder="3">/</PhysicalPath>
-          <GeneratedChecksum dnOrder="4">861229C159C8A9D3B92B3C47A4120DAB</GeneratedChecksum>
-          <UserChecksum dnOrder="5">861229C159C8A9D3B92B3C47A4120DAB</UserChecksum>
+          <GeneratedChecksum dnOrder="4">52571F34418EAD4BC92E0BEBF41A326D</GeneratedChecksum>
+          <UserChecksum dnOrder="5">52571F34418EAD4BC92E0BEBF41A326D</UserChecksum>
         </File>
         <File dnOrder="3">
           <Type dnOrder="0">SOURCE</Type>
@@ -51,8 +51,8 @@
           <Name dnOrder="1">plib_evic.c</Name>
           <LogicalPath dnOrder="2">config/default/peripheral/evic/</LogicalPath>
           <PhysicalPath dnOrder="3">/peripheral/evic/</PhysicalPath>
-          <GeneratedChecksum dnOrder="4">722C94A9E66693CFC6ECDCCE22282C94</GeneratedChecksum>
-          <UserChecksum dnOrder="5">722C94A9E66693CFC6ECDCCE22282C94</UserChecksum>
+          <GeneratedChecksum dnOrder="4">7A52515C5949A612EEE22FF81E337913</GeneratedChecksum>
+          <UserChecksum dnOrder="5">7A52515C5949A612EEE22FF81E337913</UserChecksum>
         </File>
         <File dnOrder="6">
           <Type dnOrder="0">SOURCE</Type>
@@ -83,24 +83,24 @@
           <Name dnOrder="1">plib_uart2.c</Name>
           <LogicalPath dnOrder="2">config/default/peripheral/uart/</LogicalPath>
           <PhysicalPath dnOrder="3">/peripheral/uart/</PhysicalPath>
-          <GeneratedChecksum dnOrder="4">A8EED61B3ACCFF87C9E73FE3A24A9F74</GeneratedChecksum>
-          <UserChecksum dnOrder="5">A8EED61B3ACCFF87C9E73FE3A24A9F74</UserChecksum>
+          <GeneratedChecksum dnOrder="4">78A7D990351326DC25E6A911B16A1A93</GeneratedChecksum>
+          <UserChecksum dnOrder="5">78A7D990351326DC25E6A911B16A1A93</UserChecksum>
         </File>
         <File dnOrder="10">
           <Type dnOrder="0">SOURCE</Type>
           <Name dnOrder="1">xc32_monitor.c</Name>
           <LogicalPath dnOrder="2">config/default/stdio/</LogicalPath>
           <PhysicalPath dnOrder="3">/stdio/</PhysicalPath>
-          <GeneratedChecksum dnOrder="4">A9F55E7CB78F22D9000CA03DC635973C</GeneratedChecksum>
-          <UserChecksum dnOrder="5">A9F55E7CB78F22D9000CA03DC635973C</UserChecksum>
+          <GeneratedChecksum dnOrder="4">DF70FC15402D267110566D5B4C1277AD</GeneratedChecksum>
+          <UserChecksum dnOrder="5">DF70FC15402D267110566D5B4C1277AD</UserChecksum>
         </File>
         <File dnOrder="11">
           <Type dnOrder="0">HEADER</Type>
           <Name dnOrder="1">definitions.h</Name>
           <LogicalPath dnOrder="2">config/default/</LogicalPath>
           <PhysicalPath dnOrder="3">/</PhysicalPath>
-          <GeneratedChecksum dnOrder="4">A78F2E2E895996A26E3F3413EEF24148</GeneratedChecksum>
-          <UserChecksum dnOrder="5">A78F2E2E895996A26E3F3413EEF24148</UserChecksum>
+          <GeneratedChecksum dnOrder="4">F2F63F879F5CBEE4018256CDD88DB17D</GeneratedChecksum>
+          <UserChecksum dnOrder="5">F2F63F879F5CBEE4018256CDD88DB17D</UserChecksum>
         </File>
         <File dnOrder="12">
           <Type dnOrder="0">HEADER</Type>
@@ -171,8 +171,8 @@
           <Name dnOrder="1">plib_uart2.h</Name>
           <LogicalPath dnOrder="2">config/default/peripheral/uart/</LogicalPath>
           <PhysicalPath dnOrder="3">/peripheral/uart/</PhysicalPath>
-          <GeneratedChecksum dnOrder="4">168BD6B5657493825E38B1D57CC81C7C</GeneratedChecksum>
-          <UserChecksum dnOrder="5">168BD6B5657493825E38B1D57CC81C7C</UserChecksum>
+          <GeneratedChecksum dnOrder="4">6C6F723BCE6E4154390F45C379940CE5</GeneratedChecksum>
+          <UserChecksum dnOrder="5">6C6F723BCE6E4154390F45C379940CE5</UserChecksum>
         </File>
         <File dnOrder="21">
           <Type dnOrder="0">HEADER</Type>

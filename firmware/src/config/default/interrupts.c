@@ -59,7 +59,6 @@
 
 
 void TIMER_2_InterruptHandler( void );
-void UART_2_InterruptHandler( void );
 
 
 
@@ -67,11 +66,6 @@ void UART_2_InterruptHandler( void );
 void __ISR(_TIMER_2_VECTOR, ipl1AUTO) TIMER_2_Handler (void)
 {
     TIMER_2_InterruptHandler();
-}
-
-void __ISR(_UART_2_VECTOR, ipl1AUTO) UART_2_Handler (void)
-{
-    UART_2_InterruptHandler();
 }
 
 
